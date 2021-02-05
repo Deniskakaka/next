@@ -1,0 +1,337 @@
+.risk-management {
+    max-width: 1440px;
+    width: 100%;
+    margin: auto;
+    margin-top: 0;
+    overflow: hidden;
+    background-image: url('../../../public/png/Depositphotos_23582599_l-2015\ 1\ \(2\).png');
+    background-repeat: no-repeat;
+    background-position: -280px 100px;
+
+    @include for-medium-up() {
+        background-position: -100px -100px;
+    }
+
+    @include for-large-up() {
+        background-position: right 100px;
+    }
+}
+
+.risk-management-top {
+    margin-left: 16px;
+    margin-bottom: 310px;
+
+    @include for-large-up() {
+        margin-left: 70px;
+    }
+    
+    &__headling {
+        position: relative;
+        @include headlines(50px, $mainColorText, $FontText);
+        margin-top: 180px;
+        width: 100%;
+        max-width: 343px;
+        z-index: 10;
+
+        @include for-large-up() {
+            max-width: 753px;
+        }
+
+        &::before {
+            position: absolute;
+            content: '';
+            width: 54px;
+            height: 54px;
+            bottom: 0;
+            right: 65px;
+            background: linear-gradient(180deg, #3FC8E7 -28.24%, #041A1F 116.67%);
+            border-radius: 50%;
+            z-index: -1;
+
+            @include for-medium-up() {
+                right: 65px;
+                bottom: 0;
+            }
+
+            @include for-large-up() {
+                right: 475px;
+            }
+        }
+    }
+
+    &__button {
+        @include button(95px, 9px, 100%, 42px);
+        margin-top: 34px;
+    }
+}
+
+.risk-management-describe{
+    margin-left: 16px;
+    background-image: url('../../../public/png/sun-rising-behind-fictional-planet\ 1.png');
+    background-repeat: no-repeat;
+    background-position: 10px 1840px;
+    padding-bottom: 502px;
+
+    @include for-very-small-up() {
+        background-position: 10px 1600px;
+    }
+
+    @include for-small-up() {
+        background-image: url('../../../public/png/sun2.png');
+        background-position: left bottom;
+    }
+
+    @include for-medium-up() {
+        margin-right: 8px;
+        background-position: left 1050px;
+    }
+
+    @include for-large-up() {
+        background-image: none;
+        padding-bottom: 98px;
+        margin-left: 70px;
+    }
+
+    &__item {
+        margin-right: 8px;
+
+        @include for-large-up() {
+            max-width: 751px;
+        }
+
+        &__headling {
+           @include headlines(40px, $mainColorText, $FontText);
+           margin-top: 74px;
+           margin-bottom: 0;
+           font-weight: 500;
+        }
+
+        &__smallHeadling {
+            @include headlines(30px, $mainColorText, $FontText);
+            margin-top: 74px;
+            margin-bottom: 0;
+        }
+
+        &__verySmallHeadling {
+            @include headlines(30px, $mainColorText, $FontText);
+            margin-top: 44px;
+            margin-bottom: 0;
+        }
+
+        &__text {
+            font-size: 16px;
+            line-height: 150%;
+            color: $mainColorText;
+            font-family: $FontText;
+            margin-bottom: 0;
+            margin-top: 34;
+        }
+
+        &__list {
+            padding: 0;
+            margin-left: 16px;
+            margin-right: 8px;
+
+            &__item {
+                position: relative;
+                list-style-type: none;
+                color: $mainColorText;
+                font-family: $FontText;
+                font-size: 16px;
+                line-height: 150%;
+                margin-top: 24px;
+
+                &::before {
+                    position: absolute;
+                    content: '';
+                    width: 8px;
+                    height: 8px;
+                    left: -16px;
+                    top: 10px;
+                    background: linear-gradient(180deg, #1AB1D3 0%, #128DA9 100%);
+                    border-radius: 50%;
+                }
+            }
+        }
+    }
+}
+
+
+.risk-management-tools {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 16px;
+    margin-right: 8px;
+
+    @include for-medium-up() {
+        align-items: flex-start;
+        margin-top: -100px;
+    }
+
+    @include for-large-up() {
+        background-image: url('../../../public/png/sun3.png');
+        background-repeat: no-repeat;
+        background-position: right 0;
+        margin-top: 0;
+        margin-left: 0;
+    }
+
+    &__headling {
+        position: relative;
+        @include headlines(40px, $mainColorText, $FontText);
+        margin-top: -140px;
+        margin-bottom: 0;
+        width: 100%;
+        max-width: 353px;
+        z-index: 10;
+
+        @include for-small-up() {
+            max-width: 450px;
+        }
+
+        @include for-medium-up() {
+            margin-top: 0;
+        }
+
+        @include for-large-up() {
+            margin-top: 0;
+        }
+
+        @include for-large-up() {
+            margin-left: 70px;
+            max-width: 637px;
+        }
+
+        &::before {
+            position: absolute;
+            content: '';
+            width: 44px;
+            height: 44px;
+            right: 245px;
+            bottom: 2px;
+            background: linear-gradient(180deg, #3FC8E7 -28.24%, #041A1F 116.67%);
+            border-radius: 50%;
+            z-index: -1;
+
+            @include for-small-up() {
+                right: 25px;
+            }
+
+            @include for-large-up() {
+                right: 215px;
+            }
+        }
+    }
+
+    &__tool {
+        margin-right: 8px;
+
+        &__item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: #2C2C2E;
+            border-radius: 2px;
+            margin-top: 44px;
+            padding: 24px 15px 25px 14px;
+            max-width: 313px;
+
+            &__headling {
+                @include headlines(30px,#128DA9, $FontText);
+                margin-top: 0;
+                margin-bottom: 16px;
+            }
+
+            &__text {
+                font-size: 16px;
+                line-height: 150%;
+                color: $mainColorText;
+                font-family: $FontText;
+                margin: 0;
+                border-top: 0.5px solid #E9E9E9;
+                padding-top: 15px;
+            }
+        }
+    }
+
+    &__tool:nth-child(2) {
+        @include for-medium-up() {
+            margin-top: 150px;
+        }
+    }
+}
+
+.risk-management-sum-up {
+    margin-left: 16px;
+
+    @include for-large-up() {
+        margin-left: 70px;
+    }
+
+    &__headling {
+        position: relative;
+        @include headlines(40px, $mainColorText, $FontText);
+        margin-top: 140px;
+        margin-bottom: 34px;
+        width: 188px;
+        z-index: 10;
+
+        &::before {
+            position: absolute;
+            content: '';
+            right: 15px;
+            bottom: 5px;
+            width: 34px;
+            height: 34px;
+            background: linear-gradient(180deg, #3FC8E7 -28.24%, #041A1F 116.67%);
+            border-radius: 50%;
+            z-index: -1;
+        }
+    }
+
+    &__list {
+        padding: 0;
+        max-width: 753px;
+
+        &__item {
+            position: relative;
+            color: $mainColorText;
+            font-family: $FontText;
+            font-size: 16px;
+            line-height: 150%;
+            margin-left: 16px;
+            margin-right: 8px;
+            margin-top: 24px;
+            list-style-type: none;
+
+            &::before {
+                position: absolute;
+                left: -16px;
+                top: 10px;
+                content: '';
+                width: 8px;
+                height: 8px;
+                background: linear-gradient(180deg, #1AB1D3 0%, #128DA9 100%);
+                border-radius: 50%;
+            }
+        }
+    }
+}
+
+.risk-management-tools-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 754px;
+
+    @include for-medium-up() {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    @include for-large-up() {
+        margin-left: 70px;
+    }
+}

@@ -1,0 +1,104 @@
+@import './variables.scss';
+@import './mixin.scss';
+@import './breakpoint.scss';
+
+@import './componentsStyle/head/header.scss';
+@import './ui/hamburger-menu/hamburgeMenu.scss';
+@import './componentsStyle/about/about.scss';
+@import './ui/openAccount/openAccount.scss';
+@import './componentsStyle/footer/footer.scss';
+@import './componentsStyle/contact-us/contactUs.scss';
+@import './componentsStyle/partnership/partnership.scss';
+@import './componentsStyle/risk-management/risk-management.scss';
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+.main {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #000000;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+::-webkit-input-placeholder { 
+    color: rgba(254, 254, 254, 0.5);
+    font-size: 14px;
+    line-height: 20px;
+    font-family: $FontText;
+}
+::-moz-placeholder {
+    color: rgba(254, 254, 254, 0.5);
+    font-size: 14px;
+    line-height: 20px;
+    font-family: $FontText;
+}
+:-moz-placeholder { 
+    color: rgba(254, 254, 254, 0.5);
+    font-size: 14px;
+    line-height: 20px;
+    font-family: $FontText;
+}
+:-ms-input-placeholder { 
+    color: rgba(254, 254, 254, 0.5);
+    font-size: 14px;
+    line-height: 20px;
+    font-family: $FontText;
+}
+
+input[type="checkbox"]:checked, 
+input[type="checkbox"]:not(:checked)
+{
+    position: absolute;
+    left: -100000px;
+}
+
+input[type="checkbox"]:checked + label, 
+input[type="checkbox"]:not(:checked) + label {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    padding-left: 28px;
+    line-height: 20px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+input[type="checkbox"]:not(:checked) + label:before {
+    content: "";
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 18px;
+    height: 18px;
+    border: 1px solid #dddddd;
+    background-color: transparent;
+    z-index: 10;
+}
+
+input[type="checkbox"]:checked + label:before, 
+input[type="checkbox"]:not(:checked) + label:before {
+    border-radius: 2px;
+}
+
+input[type="checkbox"]:checked + label:before {
+    content: url("https://img.icons8.com/android/24/000000/checkmark.png");
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 18px;
+    height: 18px;
+    border: 1px solid #dddddd;
+    background-color: #FEFEFE;
+}

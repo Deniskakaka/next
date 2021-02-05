@@ -1,0 +1,204 @@
+.partnership {
+    position: relative;
+    max-width: 1440px;
+    width: 100%;
+    margin: auto;
+    margin-top: 0;
+    overflow: hidden;
+    margin-top: 171px;
+    background-image: url('../../../public/png/abstract-background-with-blue-circles\ 1.png');
+    background-repeat: no-repeat;
+    background-size: 500px 450px;
+    background-position: -120px 340px;
+    z-index: 10;
+
+    @include for-small-up() {
+        background-position: 180px 180px;
+    }
+
+    @include for-medium-up() {
+        background-size: 800px 800px;
+        background-position: 90px -100px;
+    }
+
+    @include for-large-up() {
+        background-size: 1000px 900px;
+        background-position: 300px -100px;
+    }
+}
+
+.partnership-top {
+    margin-bottom: 310px;
+
+    &__headling {
+        position: relative;
+        @include headlines(60px, $mainColorText, $FontText);
+        margin-top: 0;
+        margin-bottom: 34px;
+        margin-left: 16px;
+        width: 343px;
+
+        @include for-large-up() {
+            margin-left: 70px;
+        }
+
+        &::before {
+            position: absolute;
+            content: '';
+            width: 54px;
+            height: 54px;
+            right: 117px;
+            bottom: 10px;
+            background: linear-gradient(180deg, #3FC8E7 -28.24%, #041A1F 116.67%);
+            border-radius: 50%;
+            z-index: -1;
+
+            @include for-large-up() {
+                bottom: 175px;
+                right: 60px;
+            }
+        }
+
+    }
+
+    &__text {
+        color: $mainColorText;
+        font-family: $FontText;
+        font-size: 18px;
+        line-height: 140%;
+        margin-left: 16px;
+        margin-right: 16px;
+        margin-bottom: 0;
+        max-width: 343px;
+
+        @include for-medium-up() {
+            max-width: 353px;
+        }
+
+        @include for-large-up() {
+            max-width: 519px;
+            margin-left: 70px
+        }
+    }
+
+    &__button {
+        @include button(75px, 9px, 100%, 42px);
+        margin-left: 16px;
+        margin-right: 8px;
+        margin-top: 43px;
+
+        @include for-large-up() {
+            max-width: 280px;
+            padding: 9px 75px;
+            margin-left: 70px;
+        }
+    }
+}
+
+.partnership-description {
+    margin-left: 16px;
+    margin-right: 8px;
+    margin-bottom: 24px;
+
+    @include for-large-up() {
+        margin-left: 70px;
+    }
+
+    &__headling {
+        font-size: 30px;
+        line-height: 140%;
+        color: $mainColorText;
+        font-family: $FontText;
+        max-width: 519px;
+
+    }
+
+    &__text {
+        font-size: 18px;
+        line-height: 140%;
+        margin-bottom: 0;
+        color: $mainColorText;
+        font-family: $FontText;
+        max-width: 519px;
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        margin-left: 16px;
+        margin-right: 8px;
+        margin-top: 34px;
+        margin-bottom: 0;
+        list-style-type: none;
+        max-width: 519px;
+
+        &__item {
+            position: relative;
+            color:$mainColorText;
+            font-family: $FontText;
+            font-size: 16px;
+            line-height: 150%;
+            margin-bottom: 24px;
+
+            &::before {
+                position: absolute;
+                content: '';
+                height: 8px;
+                width: 8px;
+                left: -18px;
+                top: 10px;
+                background: linear-gradient(180deg, #1AB1D3 0%, #128DA9 100%);
+                border-radius: 50%;
+            }
+        }
+
+        &__item:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.partnership-steps {
+    display: flex;
+    flex-direction: column;
+    margin-left: 16px;
+    margin-right: 8px;
+
+    @include for-medium-up() {
+        flex-direction: row-reverse;
+        align-items: center;
+    }
+
+    @include for-large-up() {
+        margin-left: 70px;
+    }
+
+    &__planet {
+        background-image: url('../../../public/png/Depositphotos_97545018_l-2015\ 1.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 274px;
+    }
+
+    &__item {
+        color: $mainColorText;
+        font-family: $FontText;
+        font-size: 30px;
+        line-height: 140%;
+
+        & span {
+            color: #128DA9;
+        }
+    }
+}
+
+.partnership-steps-wrapper {
+    display: flex;
+    flex-direction: column;
+
+    @include for-medium-up() {
+        
+    }
+}

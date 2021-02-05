@@ -1,0 +1,185 @@
+.openAccount {
+    position: relative;
+    display: flex;
+    margin-top: 167px;
+    margin-bottom: 517px;
+    z-index: 10;
+
+    @include for-small-up() {
+        margin-bottom: 115px;
+        margin-top: 135px;
+    }
+
+    @include for-e-large-up() {
+        margin-bottom: 311px;
+    }
+}
+
+.openAccount-description {
+    margin-left: 20px;
+
+    @include for-e-large-up() {
+        margin-left: 70px;
+    }
+
+
+    &__headling {
+        position: relative;
+        @include headlines(40px, $mainColorText, $FontText);
+        margin-top: 0;
+        margin-right: 16px;
+        max-width: 343px;
+        line-height: 120%;
+        z-index: 10;
+
+        @include for-e-large-up() {
+            max-width: 519px;
+            font-size: 50px;
+        }
+
+        &::before{
+            position: absolute;
+            bottom: 2px;
+            left: 136px;
+            content: '';
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background: linear-gradient(180deg, #3FC8E7 -28.24%, #041A1F 116.67%);
+            z-index: -1;
+
+            @include for-very-small-up() {
+                left: 134px;
+            }
+
+            @include for-e-large-up() {
+                width: 44px;
+                height: 44px;
+                left: 70px;
+            }
+        }
+    }
+
+    &__text {
+        position: relative;
+        font-size: 16px;
+        line-height: 140%;
+        color: $mainColorText;
+        font-family: $FontText;
+        margin-top: 0;
+        margin-right: 16px;
+        margin-bottom: 44px;
+        max-width: 352px;
+        z-index: 10;
+
+        @include for-e-large-up() {
+            max-width: 519px;
+        }
+    }
+
+    &__button {
+        position: relative;
+        @include button(75px, 9px, 100%, 42px);
+        width: 95%;
+        z-index: 10;
+
+        @include for-e-large-up() {
+            @include button(85px, 9px, 280px, 42px);
+        }
+    }
+}
+
+.openAccount-images {
+    position: absolute;
+    height: 647px;
+    width: 647px;
+    right: -300px;
+
+    @include for-small-up() {
+        right: 0;
+    }
+
+    @include for-e-large-up() {
+        right: 93px;
+    }
+
+    &__circles{
+        position: absolute;
+        top: -20px;
+        left: 0;
+        background-image: url('../../../public/png/circles.png');
+        background-position: right;
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 647px;
+        height: 647px;
+
+        @include for-small-up() {
+            width: 466px;
+            height: 466px;
+            top: -80px;
+            left: 270px;
+        }
+
+        @include for-e-large-up() {
+            width: 647px;
+            height: 647px;
+        }
+    }
+
+    &__google-pixel {
+        position: absolute;
+        bottom: 30px;
+        left: 40px;
+        background-image: url('../../../public/png/Google\ Pixel\ 4a.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 152px;
+        height: 271px;
+
+        @include for-very-small-up() {
+            bottom: 60px;
+        }
+
+        @include for-small-up() {
+            left: 290px;
+            bottom: 380px;
+        }
+
+        @include for-e-large-up() {
+            width: 232px;
+            height: 412px;
+            left: 60px;
+            bottom: 235px;
+        }
+    }
+
+    &__iphone {
+        position: absolute;
+        bottom: 0;
+        left: 195px;
+        background-image: url('../../../public/png/iPhone\ 12\ Pro.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 124px;
+        height: 257px;
+
+        @include for-very-small-up() {
+            bottom: 30px;
+        }
+
+        @include for-small-up() {
+            left: 450px;
+            bottom: 350px;
+        }
+
+        @include for-e-large-up() {
+            width: 189px;
+            height: 390px;
+            left: 320px;
+            bottom: 185px;
+        }
+    }
+}

@@ -1,0 +1,152 @@
+.about {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    max-width: 1440px;
+    width: 100%;
+    margin: auto;
+    margin-top: 0;
+    overflow: hidden;
+    background-image: url('../../../public/png/planet-3149121_1920\ 1.png');
+    background-repeat: no-repeat;
+    background-position: -200px 110px;
+    z-index: 1;
+
+    @include for-small-up() {
+        background-position: 200px top;
+    }
+    @include for-medium-up() {
+        background-position: 130px top;
+        background-size: 1000px 1200px;
+    }
+
+    @include for-large-up() {
+        background-position: right top;
+    }
+}
+
+.about-top {
+    position: relative;
+    margin-left: 16px;
+    margin-top: 171px;
+
+    @include for-e-large-up() {
+        margin-left: 70px;
+    }
+
+    @include for-large-up() {
+        margin-top: 161px;
+    }
+
+    &__big-planet {
+        top: -100px;
+        right: -300px;
+        position: absolute;
+        background-image: url('../../../public/png/planet-3149121_1920\ 1.png');
+        background-size: contain;
+        background-position: right;
+        background-repeat: no-repeat;
+        width: 1328px;
+        height: 1120px;
+        z-index: 1;
+
+        @include for-e-large-up() {
+            right: 0;
+            top: -150px;
+        }
+    }
+
+    &__headling {
+        position: relative;
+        @include headlines(60px, $mainColorText, $FontText);
+        margin-top: 68px;
+        margin-bottom: 34px;
+        max-width: 343px;
+        z-index: 10;
+
+        &::before{
+            content: '';
+            position: absolute;
+            right: 86px;
+            bottom: 7px;
+            width: 54px;
+            height: 54px;
+            background: linear-gradient(180deg, #3FC8E7 -28.24%, #041A1F 116.67%);
+            border-radius: 50%;
+            z-index: -1;
+
+            @include for-very-small-up() {
+                right: 90px;
+            }
+        }
+    }
+
+    &__text {
+        position: relative;
+        color: $mainColorText;
+        font-family: $FontText;
+        margin-top: 0;
+        margin-bottom: 34px;
+        margin-right: 16px;
+        font-size: 18px;
+        line-height: 140%;
+        z-index: 10;
+
+        @include for-small-up() {
+            max-width: 353px;
+        }
+    }
+
+    &__button {
+        position: relative;
+        @include button(75px, 9px, 343px, 42px);
+        width: 95%;
+        z-index: 10;
+    }
+}
+
+.about-description {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-left: 16px;
+    margin-top: 310px;
+
+    @include for-e-large-up() {
+        margin-left: 70px;
+        margin-top: 432px;
+    }
+
+    &__text {
+        position: relative;
+        font-size: 16px;
+        line-height: 150%;
+        color: $mainColorText;
+        font-family: $FontText;
+        margin-right: 16px;
+        z-index: 10;
+
+        @include for-e-large-up() {
+            max-width: 519px;
+        }
+    }
+
+    &__text:nth-child(2){
+        margin-top: 0;
+    }
+
+    &__circles {
+        display: none;
+        position: absolute;
+        background-image: url('../../../public/png/circles.png');
+        width: 579px;
+        height: 579px;
+        left: 539px;
+        top: -100px;
+        z-index: 10;
+
+        @include for-e-large-up() {
+            display: block;
+        }
+    }
+}
