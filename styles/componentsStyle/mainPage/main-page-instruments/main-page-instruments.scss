@@ -1,0 +1,170 @@
+.main-page-instruments {
+  position: relative;
+  margin-left: 16px;
+  padding-bottom: 140px;
+  background-image: url("/static/veryBigPlanet.png");
+  background-repeat: no-repeat;
+  background-position: 15% center;
+  z-index: 10;
+
+  @include for-medium-up() {
+    background-size: 1920px 1800px;
+    padding-bottom: 100px;
+  }
+
+  @include for-large-up() {
+    padding-bottom: 220px;
+    min-height: 1008px;
+  }
+
+  @include for-e-large-up() {
+    padding-bottom: 432px;
+    margin-left: 70px;
+  }
+
+  &__wrapper-item {
+    position: relative;
+
+    &__image {
+      position: absolute;
+      display: none;
+      width: 354px;
+      height: 236px;
+      transition: all 0.8s ease;
+
+      @include for-large-up() {
+        position: absolute;
+        display: block;
+        right: 20px;
+      }
+
+      @include for-e-large-up() {
+        width: 621px;
+        height: 450px;
+        right: 170px;
+        z-index: -1;
+      }
+    }
+  }
+
+  &__headling {
+    position: relative;
+    @include headlines(40px, $mainColorText, $FontText);
+    margin-top: 0;
+    margin-bottom: 64px;
+    margin-right: 16px;
+    max-width: 344px;
+    z-index: 10;
+
+    @include for-medium-up() {
+      max-width: 727px;
+    }
+
+    @include for-large-up() {
+      max-width: 518px;
+      font-size: 50px;
+    }
+
+    &::before {
+      position: absolute;
+      right: 185px;
+      bottom: 10px;
+      content: "";
+      width: 34px;
+      height: 34px;
+      background: linear-gradient(180deg, #3fc8e7 -28.24%, #041a1f 116.67%);
+      border-radius: 50%;
+      max-width: 344px;
+      z-index: -1;
+
+      @include for-very-small-up() {
+        right: 30px;
+      }
+
+      @include for-small-up() {
+        right: 45px;
+      }
+
+      @include for-medium-up() {
+        right: 415px;
+      }
+
+      @include for-large-up() {
+        bottom: 150px;
+        right: 75px;
+        width: 44px;
+        height: 44px;
+      }
+    }
+  }
+
+  &__item {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    border-bottom: 0.5px solid #e9e9e9;
+    margin-right: 16px;
+    margin-bottom: 24px;
+    padding-bottom: 20px;
+    min-height: 151px;
+
+    @include for-medium-up() {
+      max-width: 362px;
+      flex-wrap: wrap;
+    }
+
+    @include for-large-up() {
+      max-width: 518px;
+      width: 100%;
+      flex-direction: row;
+    }
+
+    &:hover {
+      cursor: pointer;
+
+      .main-page-instruments__item__text,
+      .main-page-instruments__item__headling {
+        color: #128da9;
+      }
+    }
+
+    &__wrapper-text {
+      max-width: 320px;
+    }
+
+    &__headling {
+      color: $mainColorText;
+      font-family: $FontText;
+      font-size: 30px;
+      line-height: 140%;
+      font-weight: normal;
+      margin-top: 0;
+      margin-bottom: 16px;
+    }
+
+    &__text {
+      color: $mainColorText;
+      font-family: $FontText;
+      font-size: 16px;
+      line-height: 150%;
+      margin: 0;
+    }
+
+    &__link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: #128da9;
+      font-family: $FontText;
+      font-size: 16px;
+      line-height: 150%;
+      text-decoration: none;
+      max-width: 107px;
+
+      & img {
+        margin-left: 10px;
+      }
+    }
+  }
+}

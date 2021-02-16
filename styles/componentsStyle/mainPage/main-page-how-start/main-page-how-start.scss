@@ -1,0 +1,199 @@
+.main-page-how-start {
+    margin-top: 140px;
+    margin-bottom: 900px;
+
+    @include for-medium-up() {
+        margin-bottom: 700px;
+    }
+
+    @include for-e-large-up() {
+        margin-bottom: 400px;
+    }
+
+    &__headling {
+        position: relative;
+        @include headlines(40px, $mainColorText, $FontText);
+        max-width: 343px;
+        margin: 0;
+        margin-left: 16px;
+        z-index: 10;
+
+        @include for-small-up() {
+            max-width: 364px;
+        }
+
+        @include for-e-large-up() {
+            margin-left: 70px;
+        }
+
+        &::before {
+            position: absolute;
+            width: 34px;
+            height: 34px;
+            bottom: 5px;
+            right: 200px;
+            content: '';
+            background: linear-gradient(180deg, #3FC8E7 -28.24%, #041A1F 116.67%);
+            border-radius: 50%;
+            z-index: -1;
+
+            @include for-small-up() {
+                right: -5px;
+            }
+        }
+    }
+
+    &__image {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 44px 0 140px 0;
+
+        @include for-medium-up() {
+            height: 345px;
+            margin-bottom: 100px;
+        }
+
+        @include for-e-large-up() {
+            height: 519px;
+            margin-left: 70px;
+            margin-right: 70px;
+        }
+
+        &__center-image {
+            position: relative;
+            width: 184px;
+            height: 97px;
+            background-image: url('/static/Video\ preview.png');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            z-index: 10;
+
+            @include for-medium-up() {
+                width: 274px;
+                height: 144px;
+            }
+
+            @include for-large-up() {
+                width: 440px;
+                height: 236px;
+            }
+
+            @include for-e-large-up() {
+                width: 640px;
+                height: 336px;
+            }
+        }
+
+        &__left-image {
+            top: 300px;
+            opacity: 0;
+            background-image: url('/static/Depositphotos_97370862_l-2015\ 3.png');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+
+            @include for-medium-up() {
+                position: absolute;
+                left: 16px;
+                width: 325px;
+                height: 345px;
+                z-index: 1;
+            }
+
+            @include for-large-up() {
+                width: 418px;
+                height: 419px;
+            }
+
+            @include for-e-large-up() {
+                width: 518px;
+                height: 519px;
+            }
+        }
+
+        &__right-image {
+            top: 300px;
+            opacity: 0;
+            background-image: url('/static/Depositphotos_57901545_s-20194.png');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            
+            @include for-medium-up() {
+                position: absolute;
+                right: 16px;
+                width: 338px;
+                height: 198px;
+                z-index: 1;
+            }
+
+            @include for-large-up() {
+                width: 443px;
+                height: 305px;
+            }
+
+            @include for-e-large-up() {
+                width: 543px;
+                height: 305px;
+            }
+        }
+    }
+
+    &__describe {
+        position: absolute;
+        top: 500px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        min-height: 629px;
+        width: 100%;
+        background-image: url('/static/Bg\ video.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        z-index: 20;
+
+        @include for-medium-up() {
+            height: 403px;
+            background-position: center;
+            margin-bottom: 254px;
+            
+        }
+
+    &__wrapper-line {
+        left: 16px;
+        position: absolute;
+        bottom: -110px;
+
+        @include for-small-up() {
+            bottom: -200px;
+        }
+
+        @include for-medium-up() {
+            bottom: -160px;
+        }
+
+    }
+
+        &__headling {
+            @include headlines(30px, $mainColorText, $FontText);
+            margin-left: 16px;
+            margin-top: 0;
+            margin-bottom: 24px;
+
+        }
+
+        &__text {
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 150%;
+            color: $mainColorText;
+            font-family: $FontText;
+            margin: 0 8px 0 16px;
+            max-width: 342px;
+        }
+    }
+}

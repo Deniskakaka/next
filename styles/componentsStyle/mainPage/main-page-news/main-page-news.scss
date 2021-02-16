@@ -1,0 +1,179 @@
+.main-page-news {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-left: 16px;
+  margin-right: 16px;
+  margin-top: 182px;
+
+  @include for-small-up() {
+    align-items: center;
+  }
+
+  @include for-medium-up() {
+    align-items: flex-start;
+  }
+
+  @include for-e-large-up() {
+    margin-bottom: 298px;
+    margin-left: 70px;
+    margin-right: 70px;
+  }
+
+  &__headling {
+    position: relative;
+    @include headlines(40px, $mainColorText, $FontText);
+    margin-bottom: 44px;
+    margin-top: 0;
+    max-width: 220px;
+    z-index: 10;
+
+    &::before {
+      position: absolute;
+      right: -5px;
+      bottom: 5px;
+      content: "";
+      width: 34px;
+      height: 34px;
+      background: linear-gradient(180deg, #3fc8e7 -28.24%, #041a1f 116.67%);
+      border-radius: 50%;
+      z-index: -1;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    max-width: 425px;
+    height: 274px;
+    background-image: url("/static/man-using-laptop-while-sofa-home\ 1\ \(1\).png");
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 44px;
+
+    @include for-small-up() {
+      background-position: center;
+      background-size: cover;
+      max-width: 425px;
+    }
+
+    @include for-medium-up() {
+      position: absolute;
+      right: 0;
+      top: 100px;
+      max-width: 354px;
+      height: 283px;
+      background-size: contain;
+    }
+
+    @include for-large-up() {
+      max-width: 100%;
+      width: 420px;
+      height: 450px;
+      top: 45px;
+    }
+
+    @include for-e-large-up() {
+      right: -30px;
+      top: 0;
+      width: 750px;
+      height: 600px;
+    }
+  }
+
+  &__item {
+    display: flex;
+    background: #2c2c2e;
+    border-radius: 2px;
+    padding: 15px 15px 15px 10px;
+    color: $mainColorText;
+    font-family: $FontText;
+    font-size: 18px;
+    margin-bottom: 24px;
+    max-width: 400px;
+
+    @include for-medium-up() {
+      max-width: 330px;
+    }
+
+    @include for-large-up() {
+      max-width: 495px;
+      max-height: 155px;
+    }
+
+    &__image {
+      display: flex;
+      flex-direction: column;
+      margin-right: 16px;
+
+      & img {
+        max-width: 143px;
+        max-height: 110px;
+      }
+
+      & span {
+        margin-top: 8px;
+        font-size: 12px;
+
+        @include for-large-up() {
+          display: none;
+        }
+      }
+
+      & span:nth-child(2) {
+        color: #128da9;
+        font-size: 16px;
+      }
+    }
+
+    &__text {
+      margin: 0;
+
+      @include for-large-up() {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        & span {
+          display: flex;
+          justify-content: space-between;
+        }
+      }
+
+      &__headling,
+      &__date {
+        display: none;
+
+        @include for-large-up() {
+          display: inline;
+        }
+      }
+
+      &__headling {
+        color: #128da9;
+      }
+    }
+  }
+
+  &__show {
+    @include button(90px, 9px, 378px, 42px);
+    width: 100%;
+    margin-top: 20px;
+
+    @include for-small-up() {
+      max-width: 425px;
+    }
+
+    @include for-medium-up() {
+      max-width: 355px;
+    }
+  }
+
+  & .Collapsible__contentOuter {
+    min-height: 440px;
+
+    @include for-large-up() {
+      min-height: 350px;
+    }
+  }
+}

@@ -1,4 +1,5 @@
 import { gsap } from "gsap/dist/gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 const animationMainPage = {
   planetAnimation: (object, trigger) => {
@@ -87,6 +88,79 @@ const animationMainPage = {
         end: "200%",
       },
       opacity: 1,
+    });
+  },
+  currentAnimation: (stepAnimation, object, triggerAnimation) => {
+    ScrollTrigger.matchMedia({
+      "(min-width: 360px)": function () {
+        let count = gsap.timeline(object, { duration: 2 });
+        count
+          .from(object, {
+            scrollTrigger: {
+              trigger: triggerAnimation,
+              scrub: true,
+              start: "-35% top",
+              end: "-35%",
+            },
+            strokeDashoffset: `${((100 - 125) / 100) * Math.PI * (54 * 2)}`,
+          })
+          .to(object, {
+            scrollTrigger: {
+              trigger: triggerAnimation,
+              scrub: true,
+              start: "-35% top",
+              end: "200%",
+            },
+            strokeDashoffset: `${((100 - 200) / 100) * Math.PI * (54 * 2)}`,
+          });
+        stepAnimation;
+      },
+      "(min-width: 768px)": function () {
+        stepAnimation;
+        let count = gsap.timeline(object, { duration: 2 });
+        count
+          .from(object, {
+            scrollTrigger: {
+              trigger: triggerAnimation,
+              scrub: true,
+              start: "-35% top",
+              end: "-35%",
+            },
+            strokeDashoffset: `${((100 - 125) / 100) * Math.PI * (54 * 2)}`,
+          })
+          .to(object, {
+            scrollTrigger: {
+              trigger: triggerAnimation,
+              scrub: true,
+              start: "-35% top",
+              end: "270%",
+            },
+            strokeDashoffset: `${((100 - 200) / 100) * Math.PI * (54 * 2)}`,
+          });
+      },
+      "(min-width: 990px)": function () {
+        let count = gsap.timeline(object, { duration: 2 });
+        count
+          .from(object, {
+            scrollTrigger: {
+              trigger: triggerAnimation,
+              scrub: true,
+              start: "-35% top",
+              end: "-30%",
+            },
+            strokeDashoffset: `${((100 - 125) / 100) * Math.PI * (54 * 2)}`,
+          })
+          .to(object, {
+            scrollTrigger: {
+              trigger: triggerAnimation,
+              scrub: true,
+              start: "-35% top",
+              end: "240%",
+            },
+            strokeDashoffset: `${((100 - 200) / 100) * Math.PI * (54 * 2)}`,
+          });
+        stepAnimation;
+      },
     });
   },
 };
