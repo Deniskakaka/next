@@ -1,0 +1,316 @@
+.faq {
+    max-width: 1440px;
+    width: 100%;
+    margin: auto;
+    margin-top: 0;
+    overflow: hidden;
+
+    & .is-open {
+        color: #128DA9 !important;
+    
+        &::before {
+            position: absolute;
+            right: -50px;
+            content: '';
+            background-image: url('../../../public/png/arrow.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            width: 24px;
+            height: 24px;
+            transform: rotate(90deg);
+            transition: transform 0.8s ease;
+        }
+    }
+}
+
+.faq-top {
+    position: relative;
+    margin-top: 177px;
+    padding-bottom: 629px;
+    background-image: url('../../../public/png/Depositphotos_1803357_l-2015\ 6.png');
+    background-repeat: no-repeat;
+    background-position: -195px bottom;
+    background-size: 600px 600px;
+
+    @include for-small-up() {
+        background-position: -100px 270px;
+        background-size: 700px 700px;
+    }
+
+    @include for-medium-up() {
+        background-position: right -10px;
+        background-size: 500px 500px;
+        padding-bottom: 269px;
+    }
+
+    @include for-large-up() {
+        background-size: 900px 900px;
+        background-position-y: -90px;
+        margin-top: 129px;
+    }
+
+
+    &__headling {
+        position: relative;
+        @include headlines(70px, $mainColorText, $FontText);
+        margin: 0;
+        max-width: 122px;
+        margin-left: 16px;
+        z-index: 10;
+
+        @include for-e-large-up() {
+            margin-left: 70px;
+        }
+
+        &::before {
+            position: absolute;
+            right: -30px;
+            bottom: 25px;
+            content: '';
+            width: 54px;
+            height: 54px;
+            background: linear-gradient(180deg, #3FC8E7 -28.24%, #041A1F 116.67%);
+            border-radius: 50%;
+            z-index: -1;
+        }
+    }
+
+    &__text {
+        font-size: 18px;
+        line-height: 140%;
+        color: $mainColorText;
+        font-family: $FontText;
+        margin-left: 16px;
+        max-width: 353px;
+
+        @include for-large-up() {
+            max-width: 753px
+        }
+
+        @include for-e-large-up() {
+            margin-left: 70px;
+        }
+    }
+
+    &__button {
+        @include button(100px, 9px, 333px, 42px);
+        width: 100%;
+        margin-top: 44px;
+        margin-left: 12px;
+
+        @include for-e-large-up() {
+            margin-left: 70px;
+        }
+    }
+
+    &__wrapper-line {
+        position: absolute;
+        top: 565px;
+        left: 16px;
+
+        @include for-small-up() {
+            top: 635px;
+        }
+
+        @include for-medium-up() {
+            top: 640px;
+        }
+
+        @include for-e-large-up() {
+            left: 70px;
+            top: 550px;
+        }
+    }
+}
+
+.faq-categories {
+    margin-left: 16px;
+    margin-right: 16px;
+
+    @include for-e-large-up() {
+        margin-left: 70px;
+        margin-right: 70px;
+    }
+
+    &__headling {
+        position: relative;
+        @include headlines(40px, $mainColorText, $FontText);
+        margin-top: 0;
+        margin-bottom: 44px;
+        max-width: 343px;
+        z-index: 10;
+
+        @include for-large-up() {
+            font-size: 50px;
+        }
+
+
+        &::before {
+            position: absolute;
+            right: 45px;
+            bottom: 5px;
+            content: '';
+            width: 34px;
+            height: 34px;
+            background: linear-gradient(180deg, #3FC8E7 -28.24%, #041A1F 116.67%);
+            border-radius: 50%;
+            z-index: -1;
+        }
+    }
+
+    &__filter {
+        display: flex;
+        flex-wrap: wrap;
+        padding-bottom: 386px;
+        justify-content: center;
+        background-image: url('../../../public/png/neptune-5550216_1920\ 1.png');
+        background-repeat: no-repeat;
+        background-position: bottom;
+        background-size: 430px 430px;
+
+        @include for-medium-up() {
+            background-size: 730px 730px;
+            background-position-y: 220px;
+            padding-bottom: 468px;
+        }
+
+        @include for-large-up() {
+            justify-content: flex-start;
+            padding-bottom: 164px;
+            background-position: right -100px;
+            background-size: 630px 630px;
+        }
+
+        &__item {
+            border: none;
+            background: #2C2C2E;
+            border-radius: 2px;
+            width: 100%;
+            flex-grow: 1;
+            margin-bottom: 34px;
+            font-size: 30px;
+            line-height: 140%;
+            font-family: $FontText;
+            color: #128DA9;
+            max-width: 334px;
+            min-height: 154px;
+
+            @include for-small-up() {
+                max-width: 284px;
+                margin-left: 10px;
+            }
+
+            @include for-medium-up() {
+                max-width: 354px;
+            }
+
+            @include for-large-up() {
+                max-width: 330px;
+            }
+        }
+
+        &__item-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            max-width: 754px;
+
+            @include for-large-up() {
+                justify-content: flex-start;
+            }
+        }
+    }
+}
+
+.faq-list-questions {
+    position: relative;
+    margin-left: 16px;
+    margin-right: 16px;
+    color: $mainColorText;
+    font-family: $FontText;
+
+    @include for-medium-up() {
+        margin-bottom: 165px;
+    }
+
+    @include for-e-large-up() {
+        margin-left: 70px;
+        margin-right: 70px;
+    }
+
+    &__headling {
+        position: relative;
+        @include headlines(40px, $mainColorText, $FontText);
+        margin-bottom: 44px;
+        margin-top: 0;
+        max-width: 343px;
+        z-index: 10;
+
+        @include for-large-up() {
+            font-size: 50px;
+            max-width: 413px;
+        }
+
+        &::before {
+            position: absolute;
+            right: 140px;
+            bottom: 5px;
+            content: '';
+            width: 34px;
+            height: 34px;
+            background: linear-gradient(180deg, #3FC8E7 -28.24%, #041A1F 116.67%);
+            border-radius: 50%;
+            z-index: -1;
+
+            @include for-small-up() {
+                right: 5px;
+            }
+
+            @include for-large-up() {
+                right: -5px;
+                bottom: 10px;
+            }
+        }
+    }
+
+    &__circle {
+        position: absolute;
+        top: -170px;
+        right: -340px;
+        display: none;
+        background-image: url('../../../public/png/circles.png');
+        width: 800px;
+        height: 800px;
+        background-position: center;
+        background-repeat: no-repeat;
+
+        @include for-large-up() {
+            display: block;
+        }
+    }
+
+    &__item {
+        border-top: 0.5px solid #E9E9E9;
+        border-bottom: 0.5px solid #E9E9E9;
+        margin-bottom: 34px;
+        max-width: 753px;
+
+        & .Collapsible__trigger {
+            position: relative;
+            padding-right: 50px;
+            cursor: pointer;
+
+            &::before {
+                position: absolute;
+                right: 0;
+                content: '';
+                background-image: url('../../../public/png/arrow.png');
+                background-size: cover;
+                background-repeat: no-repeat;
+                width: 24px;
+                height: 24px;
+                transition: transform 0.8s ease;
+            }
+        }
+    }
+}

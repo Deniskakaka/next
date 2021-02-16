@@ -1,0 +1,222 @@
+.main-page-types-accounts {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-left: 16px;
+    margin-right: 16px;
+    margin-bottom: 44px;
+
+    @include for-e-large-up() {
+        margin-left: 70px;
+        margin-right: 70px;
+    }
+
+    &__headling {
+        position: relative;
+        @include headlines(40px, $mainColorText, $FontText);
+        margin-top: 0;
+        margin-bottom: 18px;
+        max-width: 269px;
+        font-weight: normal;
+        z-index: 10;
+
+        &::before {
+            position: absolute;
+            right: 0;
+            bottom: 7px;
+            content: '';
+            width: 34px;
+            height: 34px;
+            background: linear-gradient(180deg, #3FC8E7 -28.24%, #041A1F 116.67%);
+            border-radius: 50%;
+            z-index: -1;
+        }
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        background: #2C2C2E;
+        border-radius: 2px;
+        padding: 21px 30px;
+        max-width: 230px;
+        max-height: 340px;
+        height: 90%;
+        border-radius: 2px;
+
+        @include for-very-small-up() {
+             max-width: 80%;
+             margin: auto;
+        }
+
+        @include for-small-up() {
+            padding: 21px 15px;
+            margin: auto;
+            max-width: 220px;
+        }
+
+        @include for-medium-up() {
+            max-width: 193px;
+            margin-bottom: 10px;
+        }
+
+        @include for-large-up() {
+            min-width: 220px;
+            max-width: 203px;
+        }
+
+        &__headling {
+            font-size: 22px;
+            line-height: 140%;
+            font-family: $FontText;
+            color: $mainColorText;
+            font-weight: normal;
+            margin-top: 0;
+            margin-bottom: 24px;
+        }
+
+        &__price {
+            font-size: 30px;
+            line-height: 140%;
+            font-weight: normal;
+            font-family: $FontText;
+            color: $mainColorText;
+        }
+
+        &__content {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            width: 100%;
+            border-top: 0.5px solid #E9E9E9;
+            padding-top: 17px;
+            min-height: 162px;
+
+            &__describe {
+                position: relative;
+                margin-top: 24px;
+                font-size: 16px;
+                line-height: 150%;
+                font-family: $FontText;
+                color: $mainColorText;
+                margin-left: 16px;
+
+                &::before {
+                    position: absolute;
+                    content: '';
+                    top: 5px;
+                    left: -20px;
+                    background-image: url('../../../public/png/tick.png');
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    width: 16px;
+                    height: 16px;
+                }
+            }
+
+            &__describe:nth-child(1) {
+                margin-top: 0;
+            }
+        }
+
+        &__button {
+            @include button(50px, 9px, 100%, 42px);
+            width: 100%;
+            margin-top: 33px;
+        }
+    }
+}
+
+.Bronze {
+    border-radius: 2px 2px 0px 0px;
+    border-top: #CD7F32 solid 4px;
+}
+
+.Silver {
+    border-radius: 2px 2px 0px 0px;
+    border-top:  #C0C0C0 solid 4px;
+
+}
+
+.Gold {
+    border-radius: 2px 2px 0px 0px;
+    border-top:  #FFD700 solid 4px;
+} 
+
+
+.Platinum {
+    border-radius: 2px 2px 0px 0px;
+    border-top:  #F8F8FF solid 4px;
+} 
+
+.Diamond {
+    position: relative;
+
+    &::before {
+        border-radius: 2px 2px 0px 0px;
+        position: absolute;
+        top: 0;
+        content: '';
+        width: 100%;
+        height: 4px;
+        background: linear-gradient(270deg, #669AB5 0%, #93C4DF 51.04%, #D4E5F0 100%);
+    }
+
+} 
+
+.Vip {
+    position: relative;
+
+    &::before {
+        border-radius: 2px 2px 0px 0px;
+        position: absolute;
+        top: 0;
+        content: '';
+        width: 100%;
+        height: 4px;
+        background: linear-gradient(270deg, #FCCB90 0%, #D57EEB 100%);
+    }
+}
+
+.type-account-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.type-account-wrapper {
+    width: 100%;
+    display: flex;
+}
+
+.slick-initialized {
+    max-width: 320px !important;
+    margin: auto !important;
+
+    @include for-small-up() {
+        max-width: 580px !important;
+    }
+
+    @include for-medium-up() {
+        max-width: 280px !important;
+        margin-left: 20px !important;
+        margin-top: 50px !important;
+    }
+
+    @include for-e-large-up() {
+        max-width: 580px !important;
+    }
+}
+
+.slick-list {
+
+    @include for-small-up() {
+        max-height: 390px !important;
+    }
+
+    @include for-medium-up() {
+        max-height: 780px !important;
+    }
+}

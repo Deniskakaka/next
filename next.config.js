@@ -1,33 +1,40 @@
-const path = require('path')
-const withSvgr = require("next-svgr");
+const path = require('path');
+const withTM = require("next-transpile-modules");
+const withPlugins = require("next-compose-plugins");
+const withImages = require('next-images')
+
 
 module.exports = {
-  sassOptions: {
-    includePaths: [path.join(__dirname, 'styles')],
-  },
-  svgrOptions: {
-    configFile: path.resolve(__dirname, '.svgrrc.js'),
-  },
-  webpack (config, options) {
-    config.resolve.alias['components'] = path.join(__dirname, 'components');
-    return config
-  },
+  productionBrowserSourceMaps: true,
   async rewrites() {
     return [
       {
-        source: '/components/contact-us/ContactUs',
+        source: '/about',
         destination: '/components/about/About',
       },
+      {
+        source: '/contact-us',
+        destination: '/components/contact-us/ContactUs',
+      },
+      {
+        source: '/partnership',
+        destination: '/components/partnership/Partnership'
+      },
+      {
+        source: '/FAQ',
+        destination: '/components/faq/Faq'
+      }
     ]
-  },
+  }
+};
+
+const nextConfig = {
+  target: 'serverless',
+  webpack: function (config) {
+      config.module.rules.push({test: /\.yml$/, use: 'raw-loader'})
+      
+      return config
+  }
 }
 
-module.exports = withSvgr({
-  svgrOptions: {
-    titleProp: true,
-    icon: true,
-    svgProps: {
-      height: 'auto',
-    },
-  },
-});
+module.exports = withPlugins([withTM], nextConfig);

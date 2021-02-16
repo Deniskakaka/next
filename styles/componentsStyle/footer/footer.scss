@@ -9,8 +9,13 @@
     align-items: center;
     z-index: 10;
 
+    @include for-small-up() {
+        margin-top: 50px;
+    }
+
     @include for-e-large-up() {
         align-items: flex-start;
+        margin-top: 164px;
 
         & svg {
             margin-left: 70px;
@@ -49,6 +54,7 @@
         @include for-e-large-up {
             margin-right: 70px;
         }
+
     }
 
     &__item:first-child{
@@ -69,11 +75,6 @@
         border-top: 0.5px solid #E9E9E9;
         border-bottom: 0.5px solid #E9E9E9;
         padding: 8px 0;
-        max-height: 20px;
-        -webkit-transition: max-height 0.5s ease-out ;
-        -moz-transition: max-height 0.5s ease-out ;
-        -o-transition: max-height 0.5s ease-out ;
-        transition: max-height 0.5s ease-out ;
         overflow: hidden;
         margin-top: 24px;
         cursor: pointer;
@@ -81,6 +82,20 @@
         @include for-e-large-up {
             border: none;
             max-height: 100%;
+        }
+
+        & .Collapsible__contentOuter {
+            min-height: 30px;
+
+            @include for-e-large-up() {
+                min-height: 300px;
+            }
+           
+        }
+
+        & .Collapsible__contentInner {
+            display: flex;
+            flex-direction: column;
         }
 
         &__headling {
@@ -243,12 +258,4 @@
         align-items: center;
         width: 100%;
     }
-}
-
-.show {
-    -webkit-transition: max-height 1.5s ease-out ;
-    -moz-transition: max-height 1.5s ease-out ;
-    -o-transition: max-height 1.5s ease-out ;
-    transition: max-height 1.5s ease-out ;
-    max-height: 700px;
 }

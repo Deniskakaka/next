@@ -115,11 +115,18 @@
         height: 647px;
 
         @include for-small-up() {
-            width: 466px;
-            height: 466px;
-            top: -80px;
-            left: 270px;
+            width: 366px;
+            height: 366px;
+            top: -50px;
+            left: 370px;
         }
+
+        @include for-medium-up() {
+          width: 550px;
+          height: 550px;
+          top: -110px;
+          left: 250px;
+        } 
 
         @include for-e-large-up() {
             width: 647px;
@@ -143,8 +150,17 @@
         }
 
         @include for-small-up() {
-            left: 290px;
+            left: 390px;
             bottom: 380px;
+            width: 120px;
+            height: 220px;
+        }
+
+        @include for-medium-up() {
+            left: 280px;
+            bottom: 300px;
+            width: 200px;
+            height: 300px;   
         }
 
         @include for-e-large-up() {
@@ -171,8 +187,17 @@
         }
 
         @include for-small-up() {
+            left: 520px;
+            bottom: 360px;
+            width: 100px;
+            height: 190px;
+        }
+
+        @include for-medium-up() {
             left: 450px;
-            bottom: 350px;
+            bottom: 280px;
+            width: 160px;
+            height: 260px;
         }
 
         @include for-e-large-up() {

@@ -3,6 +3,7 @@
     padding: $topPadding $saidPadding $topPadding $saidPadding;
     max-width: $width;
     max-height: $height;
+    width: 100%;
     color: #FEFEFE;
     border: none;
     box-shadow: 0px 10px 18px rgba(25, 171, 204, 0.3);
@@ -13,6 +14,12 @@
     cursor: pointer;
     outline: none;
     text-decoration: none;
+
+    &:hover {
+        background: linear-gradient(180deg, #22D6FF 0%, #1CAECF 100%);
+        box-shadow: 0px 14px 68px rgba(25, 171, 204, 0.5);
+        color: #2C2C2E;
+    }
 }
 
 @mixin headlines($size, $color, $font) {
@@ -21,4 +28,54 @@
     color: $color;
     font-family: $font;
     font-weight: 500;
+}
+
+@function lightness ( $color, $percent: 5 )
+{
+  @return adjust-color( $color, $lightness: $percent * 1% );
+}
+
+@mixin galaxy ( 
+  $stars: $stars, 
+  $colors: $colors, 
+  $min-dist: $min-dist,
+  $max-dist: $max-dist,
+  $min-size: $min-size, 
+  $max-size: $max-size, 
+)
+{
+  $length: length( $colors );
+  $dif-size: abs( $max-size - $min-size );
+  $dif-dist: abs( $max-dist - $min-dist );
+  
+  @for $star from 1 through $stars
+  {
+    $random: random( 5 );
+    
+    $dist: $min-dist + $dif-dist * random();
+    $size: $min-size + $dif-size * random();
+    $half: $size / 2;
+    
+    $color: nth( $colors, random( $length ) );
+    
+    $background: lightness( $color, $random * if( random( 2 ) == 1, 1, -1 ) );
+    
+    $blur: $half + random() * $size;
+    $spread: random() * $half;
+    $shadow: lightness( $color, $random );
+    $box-shadow: 0 0 $blur $spread $shadow;
+    
+    $rotate: 
+      rotate3d( 1, 0, 0, random( 360 ) - 1deg )
+      rotate3d( 0, 1, 0, random( 360 ) - 1deg )
+      rotate3d( 0, 0, 1, random( 360 ) - 1deg );
+    
+    .star:nth-of-type( #{ $star } )
+    {
+      --size: #{ $size };
+      --background: #{ $background };
+      --shadow: #{ $box-shadow };
+      --transform: #{ $rotate translate3d( 0, 0, $dist ) }
+    }
+  }
 }

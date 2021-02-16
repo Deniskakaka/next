@@ -9,9 +9,9 @@ export default function OpenAccount() {
                 <button className='openAccount-description__button'>Open an account</button>
             </div>
             <div className='openAccount-images'>
-                <div className='openAccount-images__circles'></div>
-                <div className='openAccount-images__google-pixel'></div>
-                <div className='openAccount-images__iphone'></div>
+                <div className='openAccount-images__circles' data-aos="fade-left" data-aos-duration="1500" data-aos-once={true}></div>
+                <div className='openAccount-images__google-pixel' data-aos="fade-left" data-aos-duration="500" data-aos-once={true}></div>
+                <div className='openAccount-images__iphone' data-aos="fade-left" data-aos-duration="700" data-aos-once={true}></div>
             </div>
         </div>
     )

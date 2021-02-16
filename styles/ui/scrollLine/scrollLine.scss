@@ -1,0 +1,57 @@
+.scroll {
+    position: absolute;
+    left: -80px;
+    transform: rotate(90deg);
+    z-index: 10;
+
+    @include for-large-up() {
+        left: -60px;
+        bottom: 40px !important;
+    }
+
+    @include for-small-up() {
+        bottom: 60px !important;
+    }
+}
+
+input[type=range] {
+    -webkit-appearance: none; 
+    width: 164px;
+    background: transparent;
+    outline: none;
+
+    @include for-large-up() {
+        width: 124px;
+    }
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: none;
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    background: #ffffff;
+    cursor: pointer;
+    margin-top: -5.8px;
+    outline: none;
+}
+
+input[type=range]::-webkit-slider-runnable-track{
+    width: 100%;
+    height: 0.4px;
+    cursor: pointer;
+    background: #EFEFEF;
+    border: 0.3px solid #EFEFEF;
+    border-radius: 50px;
+    outline: none;
+}
+
+input[type=range]::-moz-range-track {
+    width: 100%;
+    height: 0.4px;
+    cursor: pointer;
+    background: #EFEFEF;
+    border: 0.3px solid #EFEFEF;
+    outline: none;
+}

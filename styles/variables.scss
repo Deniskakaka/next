@@ -3,3 +3,27 @@ $FontText : 'Red Hat Display','Franklin Gothic Medium', 'Arial Narrow', Arial, s
 $bar-width: 24px;
 $bar-height: 2px;
 $bar-spacing: 7px;
+$color-background: #0e0220;
+$stars: 200;
+$min-dist: 105vmin;
+$max-dist: 200vmin;
+$min-size: .25vmin;
+$max-size: .55vmin;
+$perspective: 3000vmin;
+$origin: ( 0vw, 0vh, 0vmin );
+$rotation: ( 1, 1, 1 );
+$time: 16s;
+$colors: (
+  #7572f4,
+  #ff3e6d,
+  #ff7bb0,
+  #fff3a3,
+  #f68787,
+  #f8a978,
+  #f1eb9a,
+  #a4f6a5,
+  #eef2f5,
+  #ea168e,
+  #612570,
+  #1eafed,
+);

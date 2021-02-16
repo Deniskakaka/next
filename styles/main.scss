@@ -10,6 +10,11 @@
 @import './componentsStyle/contact-us/contactUs.scss';
 @import './componentsStyle/partnership/partnership.scss';
 @import './componentsStyle/risk-management/risk-management.scss';
+@import './componentsStyle/mainPage/mainPage.scss';
+@import './ui/wrapper-accounts/wrapper-accounts.scss';
+@import './ui/scrollLine/scrollLine.scss';
+@import './componentsStyle/fqa/faq.scss';
+@import './ui/bread-crumbs/bread-crumbs.scss';
 
 body {
     padding: 0;
@@ -101,4 +106,136 @@ input[type="checkbox"]:checked + label:before {
     height: 18px;
     border: 1px solid #dddddd;
     background-color: #FEFEFE;
+}
+
+
+.demo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 20px;
+    left: 16px;
+    flex-direction: column;
+    
+    :first-child {
+      margin-bottom: 20px;
+    }
+  }
+  
+  .progress {
+    transform: rotate(-90deg);
+  }
+
+
+  #hidden {
+      stroke: rgba(5, 5, 5, 0.8);
+  }
+
+  .count {
+      position: absolute;
+      top: 20px;
+      color: #128DA9;
+      font-weight: 500;
+      font-size: 70px;
+      line-height: 120%;
+      font-family: $FontText;
+  }
+
+.one{
+    opacity: 1;
+}
+
+.two{
+    opacity: 0;
+}
+
+.three {
+      opacity: 0;
+}
+
+.origin,
+.control,
+.galaxy,
+.star
+{
+  position: absolute;
+  transform-style: preserve-3d;
+}
+
+.origin
+{
+  transform: translate3d( $origin );
+  right: 150px;
+  top: 200px;
+
+  @include for-small-up() {
+      right: 250px;
+  }
+
+  @include for-large-up() {
+      right: 460px;
+  }
+    
+}
+
+.control
+{
+  transform: scale3d( 0, 0, 0 );
+  animation: appear $time linear forwards;
+}
+
+.galaxy
+{
+  animation: rotation $time linear infinite;
+}
+
+.star
+{
+  &,
+  &::before,
+  &::after
+  {
+    position: absolute;
+    transform-style: preserve-3d;
+  }
+  
+  &::before,
+  &::after
+  {
+    background: var( --background );
+    border-radius: 50%;
+    box-shadow: var( --shadow );
+    content: '';
+    height: var( --size );
+    width: var( --size );
+  }
+  
+  &::before
+  {
+    transform: var( --transform );
+  }
+  
+  &::after
+  {
+    transform: scale3d( -1, -1, -1 ) var( --transform );
+  }
+}
+
+@include galaxy ();
+
+@keyframes rotation
+{
+  100% { transform: rotate3d( $rotation, 360deg ) }
+}
+
+@keyframes appear
+{
+  100% { transform: scale3d( 1, 1, 1 ) }
+}
+
+@keyframes scale
+{
+  0%, 100% { transform: scale3d( 1, 1, 1 ) }
+  50% { transform: scale3d( .75, .75, .75 ) }
 }
